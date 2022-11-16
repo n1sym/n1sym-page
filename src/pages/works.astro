@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const works = [
+  {
+    title: "do-it-yourself", 
+    url: "https://do-it-yourself.vercel.app", 
+    desc: "個人サイトを自分で作ってみよう！という趣旨のページ",
+  },
+  {
+    title: "5chtree",
+    url: "https://5chtree.n1sym.com", 
+    desc: "5chログをツリー表示できるサイト",
+  },
+  {
+    title: "classical-seichi-plugin",
+    url: "https://github.com/n1sym/classical-seichi-plugin", 
+    desc: "整地に特化した機能を追加する Minecraft のプラグイン",
+  },
+  {
+    title: "leading-jockey",
+    url: "https://leading-jockey.vercel.app/", 
+    desc: "中央競馬のジョッキー成績を自動更新するページ",
+  },
+  {
+    title: "iineum",
+    url: "https://iineum.hukurouo.com/", 
+    desc: "いいねした画像を良い感じに並べるサイト",
+  },
+  {
+    title: "Rails × CloudFormation hands-on",
+    url: "https://zenn.dev/hukurouo/books/cfn-hands-on", 
+    desc: "CloudFormationを使って、インフラ構築を自動化/コード化してみる本",
+  },
+  {
+    title: "compass",
+    url: "https://compass.hukurouo.com/", 
+    desc: "技術周りのメモなど",
+  },
+  {
+    title: "king-halo",
+    url: "https://king-halo.hukurouo.com/", 
+    desc: "中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページ",
+  },
+  {
+    title: "10tuku",
+    url: "https://10tuku.hukurouo.com/", 
+    desc: "10をつくるミニゲーム",
+  },
+  {
+    title: "game-of-life-mini",
+    url: "https://game-of-life-git-main-hukurouo.vercel.app/", 
+    desc: "スマホブラウザからでも手軽に体験できるライフゲーム",
+  },
+  {
+    title: "space-clock",
+    url: "https://space-watch-hukurouo.vercel.app/", 
+    desc: "宇宙時計",
+  }
+]
+---
+
+<Layout title="works">
+	<main>
+    <p><a href="/">home</a> <a href="/works">works</a></p>
+      <section>
+        <h1>n1sym.works</h1>
+        <p class="head">作ったもの、書いたもの</p>
+        {works.map((work) => 
+          <>
+            <ul><li><a href={work.url} target="_blank" rel="noopener noreferrer">{work.title}</a></li></ul>
+            <p class="desc">{work.desc}</p>
+          </>
+        )}
+      </section>
+	</main>
+</Layout>
+<style>
+  h3 {
+    margin-top: 40px;
+  }
+  ul {
+    padding-left: 25px;
+  }
+  .desc {
+    padding-left: 25px;
+  }
+  .head {
+    margin-bottom: 20px;
+  }
+</style>
